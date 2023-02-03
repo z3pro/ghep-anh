@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div><img src="./img/Cat 1.jpg" alt="" id="anh-1" height="100px" width="600px" onclick="redshift1()"></div>
+    <div><img src="./img/Gau 2.jpg" alt="" id="anh-2" height="79px" width="600px" onclick="redshift2()"></div>
+    <div><img src="./img/Khi 3.jpg" alt="" id="anh-3" height="79px" width="600px" onclick="redshift3()"></div>
+    <script>
+        let count1 = 0,
+            count2 = 1,
+            count3 = 2;
+        let img1 = document.querySelector('#anh-1');
+        console.log(img1)
+        let img2 = document.querySelector('#anh-2');
+        let img3 = document.querySelector('#anh-3');
+
+        function redshift1() {
+            count1++;
+            if (count1 == 1) {
+                img1.src = './img/Gau 1.jpg';
+            } else if (count1 == 2) {
+                img1.src = './img/Khi 1.jpg';
+            } else {
+                count1 = 0;
+                img1.src = './img/Cat 1.jpg'
+            }
+            boxShadow();
+        }
+        function redshift2() {
+            count2++;
+            if (count2 == 1) {
+                img2.src = './img/Gau 2.jpg';
+            } else if (count2 == 2) {
+                img2.src = './img/Khi 2.jpg';
+            } else {
+                count2 = 0;
+                img2.src = './img/Cat 2.jpg'
+            }
+            boxShadow();
+        }
+        function redshift3() {
+            count3++;
+            if (count3 == 1) {
+                img3.src = './img/Gau 3.jpg';
+            } else if (count3 == 2) {
+                img3.src = './img/Khi 3.jpg';
+            } else {
+                count3 = 0;
+                img3.src = './img/Cat 3.jpg'
+            }
+            boxShadow();
+        }
+        function boxShadow() {
+            if (count1 == count2 && count2 == count3) {
+                img1.style.boxShadow = 'red 4px 4px 9px';
+                img2.style.boxShadow = 'red 4px 4px 9px';
+                img3.style.boxShadow = 'red 4px 4px 9px';
+            } else {
+                img1.style.boxShadow = 'blue 4px 4px 9px';
+                img2.style.boxShadow = 'blue 4px 4px 9px';
+                img3.style.boxShadow = 'blue 4px 4px 9px';
+            }
+        }
+    </script>
+</body>
+
+</html>
